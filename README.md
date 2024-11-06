@@ -30,7 +30,11 @@ Password: `password`
 
 And execute the sql-query: `CREATE DATABASE nestjs;`
 
+Start docker-compose: `docker-compose up --build`
+
 http://localhost:3000/api - Swagger
 http://localhost:3000/products - all products
 http://localhost:3000/categories - all categories
 http://localhost:8081/docs - Swagger UI for PHP Laravel
+
+`docker-compose down` - to stop project

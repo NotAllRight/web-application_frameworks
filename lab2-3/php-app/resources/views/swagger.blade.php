@@ -1,14 +1,14 @@
 <html>
 <head>
     <title>Swagger UI</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.52.5/swagger-ui.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@3.52.5/swagger-ui.css">
 </head>
 <body>
     <div id="swagger-ui"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/3.52.5/swagger-ui-bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@3.52.5/swagger-ui-bundle.js"></script>
     <script>
         const ui = SwaggerUIBundle({
-            url: "/swagger-docs",
+            url: "/php/swagger-docs",
             dom_id: '#swagger-ui',
             deepLinking: true,
             presets: [

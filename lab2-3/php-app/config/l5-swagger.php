@@ -12,7 +12,7 @@ return [
                 /*
                  * Route for accessing api documentation interface
                  */
-                'api' => 'api/documentation',
+                'api' => 'swagger',
             ],
             'paths' => [
                 /*
@@ -33,7 +33,7 @@ return [
                 /*
                  * File name of the generated YAML documentation file
                  */
-                'docs_yaml' => 'api-docs.yaml',
+                'docs_yaml' => '../laravel-api-spec.yaml',
 
                 /*
                  * Set this to `json` or `yaml` to determine which documentation file to use in UI

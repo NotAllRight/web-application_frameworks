@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/docs', function () {
+Route::get('/swagger', function () {
     return view('swagger');
 });
+
+Route::get('/swagger-docs', function () {
+    return response()->file(public_path('laravel-api-spec.yaml'));
+});
+

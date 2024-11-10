@@ -16,7 +16,6 @@ paths:
       responses:
         '200':
           description: A list of subscribers with pagination metadata
-          $ref:
           content:
             application/json:
               schema:

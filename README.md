@@ -56,8 +56,8 @@ http://localhost:8081/php/swagger - Swagger UI for PHP Laravel
 
 http://localhost:8081/php/swagger-docs - Swagger docs
 
-http://localhost:8081/php/subscribers - all subscribers
+http://localhost:8081/php/api/subscribers - all subscribers
 
-http://localhost:8081/php/subscriptions - all subscriptions
+http://localhost:8081/php/api/subscriptions - all subscriptions
 
 

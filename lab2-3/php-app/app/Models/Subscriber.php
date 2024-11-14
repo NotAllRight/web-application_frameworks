@@ -6,19 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Subscriber extends Model
 {
-    protected $fillable = ['name', 'email', 'subscriptions_ids'];
+    protected $fillable = ['name', 'email', 'subscriptions'];
+    protected $hidden = ['created_at', 'updated_at'];
 
-    // Декларируем, что поле subscriptions_ids является массивом JSON
+    // Декларируем, что поле subscriptions является массивом JSON
     protected $casts = [
-        'subscriptions_ids' => 'array',
+        'subscriptions' => 'array',  // Кастим поле subscriptions в массив
     ];
 
-    // Метод для добавления подписки в список ID
-    public function addSubscription($subscriptionId)
+    // Метод для загрузки подписок с полной информацией
+    public function getFullSubscriptionsAttribute()
     {
-        $subscriptions = $this->subscriptions_ids ?: []; // Если нет подписок, то создаем пустой массив
-        $subscriptions[] = $subscriptionId; // Добавляем новый ID подписки
-        $this->subscriptions_ids = $subscriptions; // Сохраняем обновленный список
-        $this->save(); // Сохраняем модель
+        // Получаем все подписки по ID, которые хранятся в поле subscriptions
+        return Subscription::whereIn('id', $this->subscriptions ?? [])->get();
     }
 }

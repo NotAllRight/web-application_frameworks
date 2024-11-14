@@ -15,10 +15,5 @@ class Subscription extends Model
         'payload',
         'expired_at',
     ];
-
-    // Связь многие ко многим с подписчиками
-    public function subscribers()
-    {
-        return $this->belongsToMany(Subscriber::class, 'subscription_subscriber');
-    }
+    protected $hidden = ['created_at', 'updated_at'];
 }

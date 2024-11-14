@@ -29,21 +29,21 @@ class SubscriptionSeeder extends Seeder
             'expired_at' => now()->addMonth(),
         ]);
 
-        // Присваиваем подписки существующим подписчикам
-        $subscriber1 = Subscriber::find(1);
-        $subscriber2 = Subscriber::find(2);
+        // // Присваиваем подписки существующим подписчикам
+        // $subscriber1 = Subscriber::find(1);
+        // $subscriber2 = Subscriber::find(2);
 
-        if ($subscriber1) {
-            $subscriber1->update([
-                'subscriptions_ids' => json_encode([$subscription1->id, $subscription2->id]),
-            ]);
-        }
+        // if ($subscriber1) {
+        //     $subscriber1->update([
+        //         'subscriptions' => json_encode([$subscription1->id, $subscription2->id]),
+        //     ]);
+        // }
 
-        if ($subscriber2) {
-            $subscriber2->update([
-                'subscriptions_ids' => json_encode([$subscription2->id]),
-            ]);
-        }
+        // if ($subscriber2) {
+        //     $subscriber2->update([
+        //         'subscriptions' => json_encode([$subscription2->id]),
+        //     ]);
+        // }
     }
 }
 

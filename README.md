@@ -8,11 +8,11 @@
 
 http://localhost:8000/ - Nginx
 
-http://localhost:8000/node/ - Express.js
+http://localhost:8000/node-express/ - Express.js
 
-http://localhost:8000/php/ - Laravel
+http://localhost:8000/php-laravel/ - Laravel
 
-http://localhost:8000/python/ - FastAPI
+http://localhost:8000/python-fastapi/ - FastAPI
 
 `docker-compose down` - to stop project
 
@@ -34,6 +34,8 @@ User: `pguser`
 
 Password: `password`
 
+DB: `nestjs`
+
 http://localhost:3000/api - Swagger
 
 http://localhost:3000/products - all products
@@ -44,13 +46,15 @@ http://localhost:3000/categories - all categories
 
 Adminer for php project:
 
-Engine: `PostgreeSQL`
+Engine: `MySQL`
 
-Name: `pg`
+Name: `mysql`
 
-User: `pguser`
+User: `mysqluser`
 
 Password: `password`
+
+DB: `laravel`
 
 http://localhost:8081/php/swagger - Swagger UI for PHP Laravel
 

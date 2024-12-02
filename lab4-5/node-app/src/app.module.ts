@@ -17,11 +17,10 @@ import { APP_GUARD } from '@nestjs/core';
     imports: [
         KeycloakConnectModule.register({
           authServerUrl: 'http://localhost:8080',
-          realm: 'Maks',
+          realm: 'maks',
           clientId: 'node-app',
-          secret: '3kHLvvSccUG8Z7ciYOs4pjrg9FF6Pep9',
+          secret: 'uXUoY1ha9jYC381hJa5Lro54J69jXywi',
           tokenValidation: TokenValidation.NONE, // optional
-
         }),
         ProductsModule,
         CategoriesModule,

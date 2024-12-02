@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Roles, Unprotected } from 'nest-keycloak-connect';
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOAuth2, ApiTags } from '@nestjs/swagger';
 @ApiTags('App')
 @Controller()
 export class AppController {
@@ -14,6 +14,8 @@ export class AppController {
   }
 
   @Get('/user')
+  @ApiOAuth2([])
+  @Unprotected()
   getUser(): string {
     return this.appService.getHello() + ' - User';
   }

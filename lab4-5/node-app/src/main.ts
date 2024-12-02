@@ -9,15 +9,27 @@ async function bootstrap() {
     .setTitle('NestJs API Documentation')
     .setDescription('Backend API for the NestJs application.')
     .setVersion('1.0')
-    .addBearerAuth(
-      {
-        type: 'http',
-        scheme: 'bearer',
-        bearerFormat: 'JWT',
-        in: 'header',
+    // .addBearerAuth(
+    //   {
+    //     type: 'http',
+    //     scheme: 'bearer',
+    //     bearerFormat: 'JWT',
+    //     in: 'header',
+    //   },
+  //   'JWT', // Это название схемы авторизации
+  // )
+  .addOAuth2({
+    type: 'oauth2',
+    flows: {
+      clientCredentials: {
+        tokenUrl: 'http://localhost:8080/realms/maks/protocol/openid-connect/token',
+        scopes: {
+          'profile': 'profile',
+          'email': 'email',
+        },
       },
-      'JWT', // Это название схемы авторизации
-    )
+    },
+  })
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

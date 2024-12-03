@@ -9,18 +9,16 @@ import {
     ResourceGuard,
     RoleGuard,
     AuthGuard,
-    TokenValidation
   } from 'nest-keycloak-connect';
 import { APP_GUARD } from '@nestjs/core';
 
 @Module({
     imports: [
         KeycloakConnectModule.register({
-          authServerUrl: 'http://localhost:8080',
+          authServerUrl: 'http://keycloak:8080',
           realm: 'maks',
           clientId: 'node-app',
-          secret: 'uXUoY1ha9jYC381hJa5Lro54J69jXywi',
-          tokenValidation: TokenValidation.NONE, // optional
+          secret: 'UKbocxZoFPeNbqyZvL2qDVDBLCAL6UDW',
         }),
         ProductsModule,
         CategoriesModule,

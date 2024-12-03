@@ -70,6 +70,8 @@ services:
       - DB_DATABASE=keycloak
       - DB_USER=keycloak
       - DB_PASSWORD=keycloak
+    volumes:
+      - keycloak-data:/opt/keycloak/data
     command: [ "start-dev" ]
     depends_on:
       - pg
@@ -84,3 +86,4 @@ services:
 volumes:
   pg-data-01:
   mysql-data:
+  keycloak-data:

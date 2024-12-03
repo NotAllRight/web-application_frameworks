@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from "@nestjs/typeorm";
 import { Category } from "./category.entity";
 import { DeleteResult, Repository } from "typeorm";
@@ -38,6 +38,18 @@ export class CategoriesService {
 
     public findOneByName(name: string): Promise<Category | null> {
         return this.repository.findOne({ where: { name } });
+    }
+
+    async update(id: number, categoryData: Category): Promise<Category> {
+        // Находим категорию по ID
+        const category = await this.findOne(id);
+        if (!category) {
+            throw new NotFoundException(`Category #${id} not found`);
+        }
+    
+        // Обновление только переданных полей
+        Object.assign(category, categoryData);
+        return this.repository.save(category);
     }
 
     public remove(id: number): Promise<DeleteResult> {

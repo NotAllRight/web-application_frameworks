@@ -1,21 +1,24 @@
-import {Column, Entity, PrimaryGeneratedColumn, OneToMany} from "typeorm";
+import { IsString, IsOptional, IsNotEmpty, IsNumber } from 'class-validator';
 import { Product } from "../products/products.entity";
 import { ApiProperty } from '@nestjs/swagger';
 
-@Entity("categories")
-export class Category {
+export class CategoryInterface {
 
-    @PrimaryGeneratedColumn()
+    @IsOptional()
+    @IsNumber()
     id?: number;
 
     @ApiProperty({ example: 'Test name', description: 'The name of the category' })
-    @Column()
+    @IsOptional()
+    @IsString()
     name?: string;
 
     @ApiProperty({ example: 'Test description', description: 'The description of the category' })
-    @Column()
+    @IsOptional()
+    @IsString()
     description?: string;
 
-    @OneToMany(() => Product, product => product.category)
+    @IsOptional()
+    @IsNotEmpty()
     products?: Product[];
 }

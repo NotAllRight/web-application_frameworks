@@ -65,3 +65,22 @@ http://localhost:8081/php/api/subscribers - all subscribers
 http://localhost:8081/php/api/subscriptions - all subscriptions
 
 
+## lab4-5 (one project)
+
+Start docker-compose: `docker-compose up --build`
+
+Stop: `docker-compose down`
+
+### lab4
+
+Node:
+
+http://localhost:3000/api - Swagger
+
+### lab5
+
+PHP:
+
+http://localhost:8081/php/swagger - Swagger
+
+http://localhost:8081/php/swagger-docs - Swagger docs

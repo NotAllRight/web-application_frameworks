@@ -31,4 +31,12 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'keycloak' => [
+        'base_url' => env('KEYCLOAK_BASE_URL', 'http://keycloak:8080'),
+        'realm' => env('KEYCLOAK_REALM', 'maks'),
+        'client_id' => env('KEYCLOAK_CLIENT_ID', 'php-app'),
+        'client_secret' => env('KEYCLOAK_CLIENT_SECRET', 'RKbJs4NGLzEp9Wgh6qIN2brrpVshK1yJ'),
+        'redirect_uri' => env('KEYCLOAK_REDIRECT_URI', 'http://keycloak:8080/callback'),
+    ],
+
 ];

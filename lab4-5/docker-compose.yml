@@ -30,6 +30,8 @@ services:
     image: webdevops/php-apache-dev:8.2
     volumes:
       - ./php-app:/app
+      - ./php-app/storage:/app/storage
+      - ./laravel-api-spec.yaml:/app/public/laravel-api-spec.yaml
     environment:
       WEB_DOCUMENT_ROOT: /app/public
   mysql:

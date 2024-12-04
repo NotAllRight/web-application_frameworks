@@ -18,7 +18,7 @@ import { APP_GUARD } from '@nestjs/core';
           authServerUrl: 'http://keycloak:8080',
           realm: 'maks',
           clientId: 'node-app',
-          secret: 'UKbocxZoFPeNbqyZvL2qDVDBLCAL6UDW',
+          secret: 'vWQefS4uERt7zDRwIclRZQkkfHcijDeH',
         }),
         ProductsModule,
         CategoriesModule,

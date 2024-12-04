@@ -126,6 +126,17 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+        'docker_stdout' => [
+            'driver' => 'single',
+            'path' => 'php://stdout',
+            'level' => env('LOG_LEVEL', 'debug'),
+        ],
+
+        'docker_stderr' => [
+            'driver' => 'single',
+            'path' => 'php://stderr',
+            'level' => env('LOG_LEVEL', 'debug'),
+        ],
     ],
 
 ];

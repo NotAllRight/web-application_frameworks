@@ -81,6 +81,6 @@ http://localhost:3000/api - Swagger
 
 PHP:
 
-http://localhost:8081/php/swagger - Swagger
+http://localhost:8000/php/swagger - Swagger
 
-http://localhost:8081/php/swagger-docs - Swagger docs
+http://localhost:8000/php/swagger-docs - Swagger docs
